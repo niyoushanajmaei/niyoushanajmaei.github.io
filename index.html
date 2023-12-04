@@ -1,32 +1,273 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niyousha Najmaei - Personal Website</title>
     <link rel="stylesheet" href="styling.css">
 </head>
+
 <body>
     <div class="container">
-
         <div class="sidebar">
-            <img src="your-profile-picture.jpg" alt="Profile Picture">
-            <a href="index.html" style="text-decoration: underline">About Me</a>
-            <a href="cv.html">CV</a>
-            <a href="projects.html">Projects</a> 
-            <a href="teaching.html">Teaching</a>
+            <img src="./images/nioosha.png" alt="Profile Picture">
+            <br><br>
+            <a href="#about" class="nav-link">About Me</a> <br>
+            <a href="#teaching" class="nav-link">Teaching</a><br>
+            <a href="#projects" class="nav-link">Projects</a><br>
+            <a href="#cv" class="nav-link">CV</a>
         </div>
 
-        <div class="content">
-            <!-- Content will be replaced by the content of the selected section -->
-        </div>
+        <div class="content" id="mainContentContainer">
+            <!-- About Me Section -->
+            <div id="name" class="name">
+                <h1>Niyousha Najmaei</h1>
+            </div>
+            <div id="about" class="section">
+                <h2>About Me</h2>
+                <p>
+                    I am a computer science master's student at <a href="https://www.tudelft.nl">Delft University of Technology</a>, the Netherlands. 
+                    I am currently working on my master's thesis at the <a href="https://pl.ewi.tudelft.nl">Programming Languages group</a>, under the supervision of <a href="https://benediktahrens.gitlab.io">Benedikt Ahrens</a>.
+                </p>
+                <p>
+                    I am interested in learning about: 
+                    <ul>
+                        <li>Category Theory</li>
+                        <li>Homotopy Type Theory and Univalent Foundations </li>
+                    </ul>
+                    
+                    I have also been interested in: 
+                    <ul>
+                        <li>Quantum Information and (Variational) Quantum Algorithms</li>
+                        <li>Graph Neural Networks</li>
+                    </ul>
+                
+                </p>
+                
+                I prefer They/Them pronouns, but She/Her works as well. 
+            </div>
 
+
+            <!-- Teaching Section -->
+            <div id="teaching" class="section">
+                <h2>TA Experience</h2>
+                <p>
+                    <ul>
+                        <li><a href="https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=66909">Information Theory for QIST</a> (Fall 2023)
+                            <ul>
+                                <li>MSc course for the QIST program at Delft University of Technology</li>
+                                <li> Assisted in developing the course material.</li>
+                            </ul>
+                            </i>
+                        </li>
+                        <li><a href="https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=66909">Computer Science for QIST</a> (Fall 2023)
+                            <ul>
+                                <li>MSc course for the QIST program at Delft University of Technology</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=64264">Security and Cryptography</a> (Fall 2023)
+                            <ul>
+                                <li>MSc course for the Computer Science program at Delft University of Technology</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=66644">Deep Learning</a> (Fall 2023)
+                            <ul>
+                                <li>BSc course for the AI minor program at Delft University of Technology</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=67116">Introduction to Python Programming</a> (2023-2024)
+                            <ul>
+                                <li>Online MOOC at Delft University of Technology</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=61499">Introduction to Quantum Computer Science</a> (Spring 2023)
+                            <ul>
+                                <li>BSc course for the Computer Science program at Delft University of Technology</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=61503">Algebra and Cryptography</a> (Spring 2023)</li>
+                            <ul>
+                                <li>BSc course for the Computer Science program at Delft University of Technology</li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="https://didattica.polito.it/pls/portal30/gap.pkg_guide.viewGap?p_cod_ins=01URNLM&p_a_acc=2022&p_header=S&p_lang=IT&multi=N">Algorithms and Data Structures</a> (Fall 2021)</li>
+                            <ul>
+                                <li>BSc course for the Computer Engineering program at Polytechnic University of Turin</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://didattica.polito.it/pls/portal30/gap.pkg_guide.viewGap?p_cod_ins=02OGDLM&p_a_acc=2021&p_header=S&p_lang=IT&multi=N">Algorithms and Programming</a> (Fall 2021)</li>
+                            <ul>
+                                <li>BSc course for the Computer Engineering program at Polytechnic University of Turin</li>
+                            </ul>
+                        </li>
+                        <li><a href="https://didattica.polito.it/pls/portal30/gap.pkg_guide.viewGap?p_cod_ins=07JCJLI&p_a_acc=2022&p_header=S&p_lang=IT&multi=N">Introduction to Computer Science</a> (Fall 2021)</li>
+                            <ul>
+                                <li>BSc course for the Computer Engineering program at Polytechnic University of Turin</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+
+
+            </div>
+
+            <!-- Projects Section -->
+            <div id="projects" class="section">
+                <h2>Projects</h2>
+                <p>
+                    <ul>
+                    <li>Variational Quantum Eigensolver for the J1-J2 Spin Model (2022 - 2023) <a href="https://github.com/niyoushanajmaei/VQE_for_J1J2/blob/main/report/vqe_report.pdf">Report</a>, <a href="https://github.com/niyoushanajmaei/VQE_for_J1J2">Code</a></li>
+                    <ul class="project-item">
+                        <li>Investigating the use of the VQE algorithm with dynamic ansätze for finding the ground state of the J1-J2 model.</li>
+                    </ul>
+                
+                    <li>Concurrency Testing for Weak Memory Models (Spring 2023) <a href="https://github.com/niyoushanajmaei/POSWM/blob/main/POS_Report-2.pdf">Report</a>, <a href="https://github.com/r-gheda/c11tester">Code</a></li>
+                    <ul class="project-item">
+                        <li>Extending BasicPOS and POS scheduling algorithms for concurrency testing in weak memory models.</li>
+                    </ul>
+                
+                    <li>Automated Product Description Generation (Fall 2021) <a href="https://github.com/niyoushanajmaei/product_description/blob/master/reports/Report.pdf">Report</a>, <a href="https://github.com/niyoushanajmaei/product_description/tree/maste">Code</a></li>
+                    <ul class="project-item">
+                        <li>Bachelor thesis</li>
+                        <li>Using Large Language Models for automating the generation of product descriptions for e-commerce platforms.</li>
+                    </ul>
+                
+                    </ul>
+                </p>
+            </div>
+
+            <!-- CV Section -->
+            <div id="cv" class="section">
+                <h2>CV</h2>
+                <h3>Education</h3>
+                <ul>
+                    <li>M.Sc. in Computer Science, <a href="https://www.tudelft.nl">Delft University of Technology</a>, the Netherlands (2022 - Present)</li>
+                    <ul>
+                        <li>Recipient of <a href="https://qutechacademy.nl/scholarships/">QuTech scholarship</a></li>
+                        <li>Current GPA: 8.4/10</li>
+                    </ul>
+                    <li>B.Sc. in Computer Engineering, <a href="https://www.polito.it">Polytechnic University of Turin</a>, Italy (2019 - 2022)</li>
+                    <ul>
+                        <li>GPA: 110/110 cum laude</li>
+                    </ul>
+                </ul>
+
+                <h3>Experience</h3>
+                <ul>
+                    <li>Teaching Assistant</li>
+                    <ul>
+                        <li>See the <a href="#teaching" class="nav-link">teaching section</a>.</li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>Machine Learning Intern, Zero11 srl, Turin, Italy (2021)</li>
+                    <ul>
+                        <li>Automating the generation of product descriptions of an e-commerce platform with open-source Large Language Models.</li>
+                    </ul>
+                </ul>
+
+                <h3>Projects</h3>
+                <ul>
+                    <li>See the <a href="#projects" class="nav-link">projects section</a>.</li>
+                </ul>
+                
+                <h3>Other activities</h3>
+                <ul>
+                    <li>Member of the organising team and mentor of <a href="http://school.math.sharif.edu">Sharif Mathematics Summer School</a>, Sharif University of Technology, Iran (2019)</li>
+                    <li>Silver medal in Iran's National Physics Olympiad (2017)</li>
+                    </ul>
+                </ul>
+            </div>
+            <p class="not-footer">&copy; 2023 Niyousha Najmaei. All rights reserved.</p>
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2023 Niyousha Najmaei. All rights reserved. Page created by <a href="https://github.com/rkargul">Radek Kargul</a>.</p>
-    </footer>
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('.nav-link');
+    const targetSections = ["about", "teaching", "projects", "cv"];
+    let currentActiveLink = null;
+    let clickedLink = false;
+
+    function updateSidebar(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const targetSectionId = entry.target.id;
+                if (currentActiveLink !== targetSectionId && !clickedLink) {
+                    currentActiveLink = targetSectionId;
+                    updateActiveLink();
+                }
+            }
+        });
+    }
+
+    function updateActiveLink() {
+        links.forEach(link => {
+            link.classList.remove('underline');
+        });
+
+        const activeLink = document.querySelector(`.nav-link[href="#${currentActiveLink || 'about'}"]`);
+        if (activeLink) {
+            activeLink.classList.add('underline');
+        }
+    }
+
+    function handleScroll() {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition === 0) {
+            currentActiveLink = "about";
+            updateActiveLink();
+        }
+    }
+
+    function handleLinkClick(event) {
+        clickedLink = true;
+        const clickedLinkId = event.target.getAttribute('href').substring(1);
+        currentActiveLink = clickedLinkId;
+        updateActiveLink();
+
+        const targetSection = document.getElementById(clickedLinkId);
+        if (targetSection) {
+            // Smooth scroll to the clicked section
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Reset the flag after a short delay
+        setTimeout(() => {
+            clickedLink = false;
+        }, 200); // Adjust the duration as needed
+    }
+
+    const observer = new IntersectionObserver(updateSidebar, { threshold: 0.5 });
+
+    targetSections.forEach(targetId => {
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            observer.observe(targetSection);
+        }
+    });
+
+    // Set the initial scroll position to the top of the page and update the sidebar
+    window.scrollTo(0, 0);
+    updateActiveLink();
+
+    // Add a scroll event listener to handle the case when the page is completely scrolled up
+    window.addEventListener('scroll', handleScroll);
+
+    // Add click event listeners to the sidebar links
+    links.forEach(link => {
+        link.addEventListener('click', handleLinkClick);
+    });
+});
+
+
+</script>
+
 </html>

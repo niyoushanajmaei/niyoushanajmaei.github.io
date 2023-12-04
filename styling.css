@@ -1,74 +1,116 @@
-/* styles.css */
 
-body {
-    font-family: Arial, sans-serif;
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #efefef;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 header {
-    background-color: #333;
+    background-color: #efefef;
     color: #fff;
     text-align: center;
     padding: 1em;
+    height: 30px;
 }
 
 .container {
     display: flex;
-    width: 1200px;
+    width: 900px;
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex: 1;
+    margin-top: 0px;
 }
 
 .sidebar {
+    text-align: center;
     width: 200px;
-    background-color: #333;
+    max-width: 100%;
+    background-color: #05445E;
     color: #fff;
-    padding: 20px;
+    padding: 130px 20px;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    top: 0;
+    bottom: 0;
 }
 
 .sidebar img {
-    width: 100px;
-    border-radius: 50%;
+    top : 20px;
+    width: 170px;
     margin-bottom: 10px;
+    position: relative
 }
 
 .sidebar a {
-    display: block;
     color: #fff;
     text-decoration: none;
-    margin-bottom: 10px;
+}
+
+.sidebar a.underline {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .content {
     flex: 1;
-    background-color: #cdcdcd;
+    background-color: #eff2f3;
     padding: 20px;
     width: 80%;
-    margin-left: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 200px;
+    box-sizing: border-box;
+    color : #444;
+    min-height: 100vh;
 }
 
-h1, h2 {
-    color: #333;
+.not-footer {
+    margin-top: auto;
+    color: #666;
+    text-align: center;
+    padding: 1em;
+    opacity: 0.4;
+    font-size: 14px;
+    height: 10px;
+    text-align: left
 }
 
-p {
-    line-height: 1.6;
+
+#mainContentContainer{
+    font-size: 14px; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
     color: #666;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
+#mainContentContainer *{
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+a {
+    color: #052c4f;
+}
+
+.section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.name{
+    margin-top: 80px;
+    margin-bottom: -30px;
 }
