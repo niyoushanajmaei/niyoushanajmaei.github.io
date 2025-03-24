@@ -64,13 +64,13 @@
                 <p>
                     <ul>
                         <li>
-                            [in Apr 2025] I will give a talk about our preprint "A Type Theory for Comprehension Categories with Applications to Subtyping" at EuroProofNet's WG6 meeting in Genoa. 
+                            [in Apr 2025] I will give a talk about our preprint "A Type Theory for Comprehension Categories with Applications to Subtyping" at EuroProofNet's WG6 meeting in Genoa. [<a href="talks/CCTT/A_Type_Theory_for_Comprehension_Categories_with_Applications_to_Subtyping_Genova.pdf" target="_blank" rel="noopener noreferrer">slides</a>]
                         </li>
                         <li>
                             [in Apr 2025] I will attend the Midlands Graduate School in Sheffield.
                         </li>
                         <li>
-                            [in Mar 2025] I will give a talk titled "A Type Theory for Comprehension Categories with Applications to Subtyping" at Proofs and Algorithms seminar at École Polytechnique. 
+                            Mar 2025: I gave the previous talk also at Proofs and Algorithms seminar at École Polytechnique. [<a href="talks/CCTT/A_Type_Theory_for_Comprehension_Categories_with_Applications_to_Subtyping_Palaiseau.pdf" target="_blank" rel="noopener noreferrer">slides</a>]
                         </li>
                         <li>
                             Mar 2025: I gave a talk titled "A Type Theory for Comprehension Categories with Applications to Subtyping" at the Programming Language seminar at TU Delft. [<a href="talks/CCTT/A_Type_Theory_for_Comprehension_Categories_with_Applications_to_Subtyping_Delft.pdf" target="_blank" rel="noopener noreferrer">slides</a>]
@@ -106,10 +106,10 @@
                         A Type Theory for Comprehension Categories with Applications to Subtyping
                         <ul>
                             <li>
-                                Proofs and Algorithms Seminar at École Polytechnique, March 2025
+                                <a href="talks/CCTT/A_Type_Theory_for_Comprehension_Categories_with_Applications_to_Subtyping_Delft.pdf" target="_blank" rel="noopener noreferrer">Programming Languages Seminar at TU Delft</a>, March 2025
                             </li>
                             <li>
-                                <a href="talks/CCTT/A_Type_Theory_for_Comprehension_Categories_with_Applications_to_Subtyping_Delft.pdf" target="_blank" rel="noopener noreferrer">Programming Languages Seminar at TU Delft</a>, March 2025
+                                <a href="talks/CCTT/A_Type_Theory_for_Comprehension_Categories_with_Applications_to_Subtyping_Palaiseau.pdf" target="_blank" rel="noopener noreferrer">Proofs and Algorithms Seminar at École Polytechnique</a>, March 2025
                             </li>
                         </ul>
                     </li>
@@ -285,22 +285,9 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll('.nav-link');
-    const targetSections = ["about", "teaching", "cv"];
-    // const targetSections = ["about", "teaching", "projects", "cv"];
+    const targetSections = ["about", "news", "publications", "talks", "teaching", "cv"];
     let currentActiveLink = null;
     let clickedLink = false;
-
-    function updateSidebar(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const targetSectionId = entry.target.id;
-                if (currentActiveLink !== targetSectionId && !clickedLink) {
-                    currentActiveLink = targetSectionId;
-                    updateActiveLink();
-                }
-            }
-        });
-    }
 
     function updateActiveLink() {
         links.forEach(link => {
@@ -314,14 +301,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function handleScroll() {
-        const scrollPosition = window.scrollY;
-        if (scrollPosition === 0) {
-            currentActiveLink = "about";
+        if (clickedLink) return; 
+
+        let topSection = null;
+        let minDistance = window.innerHeight; 
+
+        targetSections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const rect = section.getBoundingClientRect();
+                if (rect.top >= 0 && rect.top < minDistance) {
+                    minDistance = rect.top;
+                    topSection = sectionId;
+                }
+            }
+        });
+
+        if (topSection && topSection !== currentActiveLink) {
+            currentActiveLink = topSection;
             updateActiveLink();
         }
     }
 
     function handleLinkClick(event) {
+        event.preventDefault();
         clickedLink = true;
         const clickedLinkId = event.target.getAttribute('href').substring(1);
         currentActiveLink = clickedLinkId;
@@ -329,41 +332,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const targetSection = document.getElementById(clickedLinkId);
         if (targetSection) {
-            // Smooth scroll to the clicked section
             targetSection.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
         }
 
-        // Reset the flag after a short delay
+        // smooth scroll to target
         setTimeout(() => {
             clickedLink = false;
-        }, 200); // Adjust the duration as needed
+        }, 300);
     }
 
-    const observer = new IntersectionObserver(updateSidebar, { threshold: 0.5 });
-
-    targetSections.forEach(targetId => {
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            observer.observe(targetSection);
-        }
-    });
-
-    // Set the initial scroll position to the top of the page and update the sidebar
-    window.scrollTo(0, 0);
-    updateActiveLink();
-
-    // Add a scroll event listener to handle the case when the page is completely scrolled up
     window.addEventListener('scroll', handleScroll);
 
-    // Add click event listeners to the sidebar links
     links.forEach(link => {
         link.addEventListener('click', handleLinkClick);
     });
-});
 
+    handleScroll();
+});
 
 </script>
 
